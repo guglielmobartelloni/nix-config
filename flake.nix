@@ -28,6 +28,17 @@
             "the-unarchiver"
           ];
           onActivation.cleanup = "zap";
+          onActivation.autoUpdate = true;
+          onActivation.upgrade = true;
+      };
+
+      system.defaults = {
+          dock.autohide = true;
+          finder.FXPreferredViewStyle = "clmv";
+          loginwindow.GuestEnabled = false;
+          NSGlobalDomain.AppleInterfaceStyle = "Dark";
+          NSGlobalDomain.AppleICUForce24HourTime = true;
+          NSGlobalDomain.KeyRepeat = 2;
       };
 
       # Necessary for using flakes on this system.

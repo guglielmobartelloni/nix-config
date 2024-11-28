@@ -18,6 +18,8 @@
         [ pkgs.neovim
           pkgs.kitty
           pkgs.raycast
+          pkgs.direnv
+          pkgs.lazygit
         ];
 
       homebrew = {
@@ -26,6 +28,8 @@
             "firefox"
             "iina"
             "the-unarchiver"
+            "qbittorrent"
+            "tunnelblick"
           ];
           onActivation.cleanup = "zap";
           onActivation.autoUpdate = true;
@@ -35,6 +39,7 @@
       system.defaults = {
           dock.autohide = true;
           finder.FXPreferredViewStyle = "clmv";
+          finder.AppleShowAllExtensions = true;
           loginwindow.GuestEnabled = false;
           NSGlobalDomain.AppleInterfaceStyle = "Dark";
           NSGlobalDomain.AppleICUForce24HourTime = true;
@@ -43,6 +48,8 @@
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
+      programs.zsh.enable = true;
+
 
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;

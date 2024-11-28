@@ -27,9 +27,10 @@
           casks = [
             "firefox"
             "iina"
+            "localsend"
             "the-unarchiver"
             "qbittorrent"
-            "tunnelblick"
+            "eddie"
           ];
           onActivation.cleanup = "zap";
           onActivation.autoUpdate = true;
@@ -50,6 +51,7 @@
       nix.settings.experimental-features = "nix-command flakes";
       programs.zsh.enable = true;
 
+      security.pam.enableSudoTouchIdAuth = true;
 
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
